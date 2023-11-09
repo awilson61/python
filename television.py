@@ -72,6 +72,8 @@ class Television():
     def __str__(self) -> str:
         '''
         Function to represent the object in a human-readable way
+        :return: The current status of the Television,
+        provides the TV power, channel its on, and the current volume
         '''
         if self.__muted:
             return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {Television.MIN_VOLUME}'

@@ -4,12 +4,17 @@ class Television():
     MIN_CHANNEL = 0
     MAX_CHANNEL = 3
 
-    def __int__(self):
+    def __init__(self):
+        self.__status = False
         self.__muted = False
         self.__volume = Television.MIN_VOLUME
+        self.__channel = Television.MIN_CHANNEL
 
     def power(self):
-        pass
+        if self.__status:
+            self.__status = False
+        else:
+            self.__status = True
 
     def mute(self):
         pass
@@ -37,4 +42,4 @@ class Television():
         if self.__muted:
             return f'Volume = {Television.MIN_VOLUME}'
         else:
-            return f'xxx'
+            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
